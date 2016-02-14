@@ -1,4 +1,25 @@
 /* CSS declarations go here */
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
 body {
 	background: thistle;
+	font-family: sans-serif;
+	font-size: 16px;
+}
+.container {
+	max-width: 900px;
+	margin: 0 auto;
+	min-height: 100%;
+	background: white;
+	box-shadow: 0 2px 10px 0 rgba( 0,0,0,0.16), 0 2px 5px 0 rgba( 0,0,0,0.26 );
+	padding: 15px;
+}
+header {
+	padding: 0 15px;
 }
