@@ -7,7 +7,7 @@
 | meteor run | Starts Meteor server | 
 
 ### Loops
-	```
+
 	{{ #each }}
 		// Loop goes here
 	{{ /each }}
