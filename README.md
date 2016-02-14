@@ -26,3 +26,21 @@ In Mongo Console:
 		db.collection_name.insert(object)
 
 ### Forms
+To work with a form we want to grab the field values on submit: 
+	
+	Template.body.events({
+		'submit' : functiion(e) {
+
+			var fromForm = event.target.form_field.value;
+			
+			Collections.insert({
+				value: fromForm
+			});
+
+			// Clear the form
+			event.target.form_field.value = '';
+
+			// return to prevent page from refreshing
+			return false;
+		}
+	});

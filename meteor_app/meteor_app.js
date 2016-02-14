@@ -8,6 +8,26 @@ if (Meteor.isClient) {
       return Resolutions.find();
     }
   });
+
+  // Template.body becaue we are not in a specific template. 
+  // Otherwise Template.template_name
+  Template.body.events({
+    'submit .new-resolution': function(event) {
+      // target.title because that's the name of our field
+      var titleForm = event.target.title.value;
+
+      // this will save to our database, as well as update our view
+      Resolutions.insert({
+        title : titleForm,
+        createdAt: new Date()
+      });
+
+      event.target.title.value = '';
+
+      // if we don't return false, the page will refresh due to the submit event. 
+      return false;
+    }
+  });
 }
 
 
