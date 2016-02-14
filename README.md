@@ -15,10 +15,10 @@
 
 
 ### Collections
-	A way to connect to the DB (MongoDB). 
+A way to connect to the DB (MongoDB). 
 
-	In JS file:
-		CollectionName.find(); will find all collections of the name. 
+In JS file:
+	CollectionName.find(); will find all collections of the name. 
 
-	In Mongo Console: 
-		db.collection_name.insert(object)
+In Mongo Console: 
+	db.collection_name.insert(object)
