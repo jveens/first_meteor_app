@@ -8,6 +8,8 @@
 | meteor create app_name | Creates Meteor scaffold | 
 | meteor run | Starts Meteor server | 
 | meteor mongo | Runs Mongo console | 
+| meteor add package-name | Add Meteor package to app |
+| meteor remove package-name | Remove package from app | 
 
 ### Loops
 
@@ -71,6 +73,8 @@ Use packages to extend the functionality on your meteor site.
 With packages :
 * Accounts UI - https://atmospherejs.com/meteor/accounts-ui
 * Accounts Password - https://atmospherejs.com/meteor/accounts-password
+* Accounts Twitter - https://atmospherejs.com/meteor/accounts-twitter
+* Accounts Facebook - https://atmospherejs.com/meteor/accounts-facebook
 
 Add login button: 
 
@@ -84,6 +88,13 @@ Accounts UI can be customized with config:
 	
 	Accounts.ui.config({ // config_options here });
 
-Adding Twitter Authentication
+
+### Security considerations
+Insecre is a package that makes things really quick to set-up, but can leave some vulnerabilities in our app. 
+
+Remove 
+
+
+
 
 	
