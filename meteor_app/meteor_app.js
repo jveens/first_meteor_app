@@ -4,8 +4,22 @@ if (Meteor.isClient) {
   // anything that is in the body of our app, but not in a template, can use this helper
   Template.body.helpers({
     resolutions: function() {
-      // Will find all Resolutions in Mongo
-      return Resolutions.find();
+      // Will find all Resolutions in Mongo (for a specific user)
+
+      // If we have a hideFinished variable equal to true
+      // get all the resolutions NOT equal to true
+      if (Session.get('hideFinished')) {
+        return Resolutions.find({checked: {$ne: true}});
+      }
+      // Otherwise get all the resolutions
+      else {
+        return Resolutions.find();
+      }
+    },
+    // We eed to define our hideFinished template helper
+    hideFinished: function() {
+      // retrieve the session variable
+      return Session.get('hideFinished');
     }
   });
 
@@ -26,6 +40,10 @@ if (Meteor.isClient) {
 
       // if we don't return false, the page will refresh due to the submit event. 
       return false;
+    },
+    'change .hide-finished': function(e) {
+      // here we need to set a sesstion variable
+      Session.set('hideFinished', e.target.checked);
     }
   });
 

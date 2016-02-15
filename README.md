@@ -46,3 +46,20 @@ To work with a form we want to grab the field values on submit:
 			return false;
 		}
 	});
+
+'body' refers to html not in templates. For a specific template use:
+
+	Template.template_name.events({ });
+
+### Sessions
+Save data to a session so the user can interact with the application and have it not be public to other users. 
+
+Create a session variable:
+	
+	Session.set('variableName', event.target.value);
+
+Get a session variable: 
+
+	Session.get('variableName');
+
+### Meteor Packages
