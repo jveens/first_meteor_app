@@ -47,6 +47,8 @@ To work with a form we want to grab the field values on submit:
 		}
 	});
 
+#### A note on Template Helpers
+
 'body' refers to html not in templates. For a specific template use:
 
 	Template.template_name.events({ });
@@ -62,4 +64,5 @@ Get a session variable:
 
 	Session.get('variableName');
 
-### Meteor Packages
+### Meteor Packages - atmospherejs.com
+Use packages to extend the functionality on your meteor site.
