@@ -66,3 +66,9 @@ Get a session variable:
 
 ### Meteor Packages - atmospherejs.com
 Use packages to extend the functionality on your meteor site.
+
+### User accounts
+With packages :
+* Accounts UI - https://atmospherejs.com/meteor/accounts-ui
+* Accounts Password - https://atmospherejs.com/meteor/accounts-password
+	

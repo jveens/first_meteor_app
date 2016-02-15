@@ -45,6 +45,7 @@ if (Meteor.isClient) {
       // here we need to set a sesstion variable
       Session.set('hideFinished', e.target.checked);
     }
+
   });
 
   Template.resolution.events({
@@ -58,6 +59,10 @@ if (Meteor.isClient) {
     'click .delete': function() {
       Resolutions.remove(this._id);
     }
+  });
+
+  Accounts.ui.config({
+    passwordSignupFields: "USERNAME_ONLY"
   });
 }// end of isClient
 
