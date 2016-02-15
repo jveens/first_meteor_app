@@ -71,4 +71,19 @@ Use packages to extend the functionality on your meteor site.
 With packages :
 * Accounts UI - https://atmospherejs.com/meteor/accounts-ui
 * Accounts Password - https://atmospherejs.com/meteor/accounts-password
+
+Add login button: 
+
+	{{> loginButtons}}
+
+Check if user is logged in: 
+
+	{{ #if currentUser }} {{ /if }}
+
+Accounts UI can be customized with config: 
+	
+	Accounts.ui.config({ // config_options here });
+
+Adding Twitter Authentication
+
 	
