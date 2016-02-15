@@ -1,8 +1,10 @@
 # first_meteor_app
+## More info at http://docs.meteor.com/#/basic/
 ---
 
 | Command | Description | 
 | ------- | ----------- | 
+| meteor help | lists all commands |
 | meteor create app_name | Creates Meteor scaffold | 
 | meteor run | Starts Meteor server | 
 | meteor mongo | Runs Mongo console | 

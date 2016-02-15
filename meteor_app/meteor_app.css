@@ -23,3 +23,18 @@ body {
 header {
 	padding: 0 15px;
 }
+
+li {
+	list-style: none;
+	margin-bottom: 7px;
+	width: 50%;
+	
+}
+
+button.delete {
+	float: right;
+}
+li.checked {
+	color: grey;
+	text-decoration: line-through;
+}
