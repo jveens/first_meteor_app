@@ -31,10 +31,14 @@ if (Meteor.isClient) {
       var titleForm = event.target.title.value;
 
       // this will save to our database, as well as update our view
-      Resolutions.insert({
-        title : titleForm,
-        createdAt: new Date()
-      });
+      // Resolutions.insert({
+      //   title : titleForm,
+      //   createdAt: new Date()
+      // });
+
+      // Since we've removed Insecure, we have to call a function to do what the above block did
+      // Call the method with Meteor.call(function, value to pass);
+      Meteor.call('addResolution', titleForm);
 
       event.target.title.value = '';
 
@@ -73,6 +77,13 @@ if (Meteor.isServer) {
   });
 }
 
-// { title: 'Hello Resolution #1' },
-// { title: 'Hello Resolution #2' },
-// { title: 'Hello Resolution #3' }
+
+// We need the below code because we've removed Insecure
+Meteor.methods({
+  addResolution: function(title) {
+    Resolutions.insert({
+      title : title,
+      createdAt: new Date()
+    });
+  }
+});

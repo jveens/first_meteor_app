@@ -92,7 +92,19 @@ Accounts UI can be customized with config:
 ### Security considerations
 Insecre is a package that makes things really quick to set-up, but can leave some vulnerabilities in our app. 
 
-Remove 
+This package allows users to access functions that can update the DB (insert / remove data), so once we remove it our app won't work the way we want it to. To get around this, we can add methods to interact with the DB, and then call those methods. This prevents our users from being able to interact with our DB through the console. 
+
+We can create custom methods with:
+
+	Meteor.methods({
+		funcionName: function(value) {
+			// Code goes here
+		}
+		});
+
+We can then call our methods: 
+
+	Meteor.call({ 'funcionName', value_to_pass });
 
 
 
