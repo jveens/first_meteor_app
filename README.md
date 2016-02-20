@@ -94,6 +94,8 @@ Insecre is a package that makes things really quick to set-up, but can leave som
 
 This package allows users to access functions that can update the DB (insert / remove data), so once we remove it our app won't work the way we want it to. To get around this, we can add methods to interact with the DB, and then call those methods. This prevents our users from being able to interact with our DB through the console. 
 
+	meteor remove insecure
+
 We can create custom methods with:
 
 	Meteor.methods({
@@ -108,6 +110,20 @@ We can then call our methods:
 
 ### Removing Autopublish
 By removing this package, we need to set up publish and subscribe, to ensure that users only get the data that they should have access to. 
+
+	meteor remove autopublish
+
+After removal the app will be broken (it can't find the data!), so we need to fix it with Meteor.publish and Meteor.subscribe.
+
+	if (Meteor.isServer) {
+	  Meteor.publish('collection', function() {
+	    return Collection.find();
+	  });
+	}
+
+	if (Meteor.isClient) {
+	  Meteor.subscribe('resolutions');
+ 	}
 
 
 

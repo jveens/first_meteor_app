@@ -1,6 +1,11 @@
 Resolutions = new Mongo.Collection('resolutions');
 
 if (Meteor.isClient) {
+
+  // Subscribe to data in Meteor.publish
+  Meteor.subscribe('resolutions');
+
+
   // anything that is in the body of our app, but not in a template, can use this helper
   Template.body.helpers({
     resolutions: function() {
@@ -76,6 +81,10 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
+  });
+
+  Meteor.publish('resolutions', function() {
+    return Resolutions.find();
   });
 }
 
