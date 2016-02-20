@@ -100,11 +100,11 @@ We can create custom methods with:
 		funcionName: function(value) {
 			// Code goes here
 		}
-		});
+	});
 
 We can then call our methods: 
 
-	Meteor.call({ 'funcionName', value_to_pass });
+	Meteor.call({ 'functionName', value_to_pass });
 
 
 
