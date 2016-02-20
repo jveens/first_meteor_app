@@ -106,6 +106,11 @@ We can then call our methods:
 
 	Meteor.call({ 'functionName', value_to_pass });
 
+### Removing Autopublish
+By removing this package, we need to set up publish and subscribe, to ensure that users only get the data that they should have access to. 
+
+
+
 
 
 
