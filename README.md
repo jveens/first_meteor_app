@@ -10,13 +10,13 @@
 | meteor mongo | Runs Mongo console | 
 | meteor add package-name | Add Meteor package to app |
 | meteor remove package-name | Remove package from app | 
+| meteor deploy project-name.meteor.com | Deploy to Meteor server |
 
 ### Loops
 
 	{{ #each }}
 		// Loop goes here
 	{{ /each }}
-
 
 ### Collections
 A way to connect to the DB (MongoDB). 
@@ -124,7 +124,6 @@ After removal the app will be broken (it can't find the data!), so we need to fi
 	if (Meteor.isClient) {
 	  Meteor.subscribe('resolutions');
  	}
-
 
 
 
